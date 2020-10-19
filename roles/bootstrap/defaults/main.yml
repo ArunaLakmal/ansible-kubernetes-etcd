@@ -1,0 +1,32 @@
+---
+# defaults file for bootstrap
+apt_libraries:
+  - python3
+  - python3-distutils
+  - git
+  - jq
+  - make
+pip_packages:
+  - botocore
+  - boto
+  - boto3
+  - awscli
+ansible_galaxy_plugin: community.aws
+cfssl_version: R1.2
+cfssl_linux: cfssl_linux-amd64
+cfssl_json: cfssljson_linux-amd64
+cfssl_cert_info: cfssl-certinfo_linux-amd64
+kube_version: v1.18.9
+etcd_version: v3.4.13
+package_urls:
+  - "https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-amd64.tar.gz"
+  - "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/kubectl"
+  - "https://bootstrap.pypa.io/get-pip.py"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssl_linux-amd64"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssljson_linux-amd64"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssl-certinfo_linux-amd64"
+directories:
+  - /etc/etcd
+  - /var/lib/etcd
+executable_binaries:
+  - "{{ role_path}}/files/kubectl"
