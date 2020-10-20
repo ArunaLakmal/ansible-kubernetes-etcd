@@ -42,7 +42,7 @@
 - name: extracting the etcd binaries
   unarchive:
     src: "{{ role_path }}/files/etcd-{{ etcd_version }}-linux-amd64.tar.gz"
-    dest: /usr/local/bin/
+    dest: "{{ role_path }}/files/"
     mode: '0755'
 
 - name: copy executables 

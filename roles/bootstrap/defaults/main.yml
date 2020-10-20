@@ -30,3 +30,5 @@ directories:
   - /var/lib/etcd
 executable_binaries:
   - "{{ role_path}}/files/kubectl"
+  - "{{ role_path}}/files/etcd-{{ etcd_version }}-linux-amd64/etcd"
+  - "{{ role_path}}/files/etcd-{{ etcd_version }}-linux-amd64/etcdctl"
